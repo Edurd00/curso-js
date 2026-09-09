@@ -12,18 +12,18 @@ function relogio() {
   let timer;
 
   function iniciaRelogio() {
-    timer = setInterval(function() {
+    timer = setInterval(() => {
       segundos++;
-      relogio.innerHTML = criaHoraDosSegundos(segundos);
+      relogio.textContent = criaHoraDosSegundos(segundos);
     }, 1000);
   }
 
-  document.addEventListener('click', function(e) {
+  document.addEventListener('click', (e) => {
     const el = e.target;
 
     if (el.classList.contains('zerar')) {
       clearInterval(timer);
-      relogio.innerHTML = '00:00:00';
+      relogio.textContent = '00:00:00';
       relogio.classList.remove('pausado');
       segundos = 0;
     }
